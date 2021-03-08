@@ -1,0 +1,13 @@
+.c-alert {
+  &__message {
+    position: fixed;
+    top: 52px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: $zindex-tooltip;
+    @media (min-width: 992px) {
+      top: 63px;
+      left: 80%;
+    }
+  }
+}

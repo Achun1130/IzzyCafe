@@ -1,0 +1,103 @@
+.nav-link {
+  border-bottom: 1px solid#dfdfdf;
+  &:hover {
+    background-color: #efefef;
+  }
+  &.active {
+    background-color: #efefef;
+  }
+}
+
+.table-hover tbody tr:hover {
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: $light;
+}
+
+.input-group-prepend, .input-group-append {
+  background-color: #fff;
+  border-radius: .25rem;
+}
+
+.disabled {
+  cursor: not-allowed!important;
+}
+
+.list-group-item {
+  border-style: dashed;
+}
+
+.display-4 {
+  font-size: 3rem!important;
+}
+
+.border-gray {
+  border: 1px solid $gray-800;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.h6 {
+  font-size: 1rem!important;
+}
+
+.text-pre-line {
+  white-space: pre-line;
+}
+
+// table td ...
+.u-mw-100px {
+  max-width: 100px;
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 568px) {
+  .w-sm-70 {
+    width: 70%;
+  }
+  .h-sm-100 {
+    height: 100%!important;
+  }
+  .position-sm-static {
+    position: static!important;
+  }
+  .shadow-sm-none {
+    box-shadow: none!important;
+  }
+  .d-sm-grid {
+    display: grid!important;
+  }
+  .h6-sm {
+    font-size: 1rem!important;
+  }
+}
+
+@media (min-width: 768px) {
+  .h-md-100 {
+    height: 100%!important;
+  }
+  .h2-md {
+    font-size: 2rem;
+  }
+  .h4-md {
+    font-size: 1.5rem;
+  }
+  .h6-md {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-lg-white {
+    color: $white!important;
+  }
+  .u-fz-lg-sm {
+    font-size: .9rem;
+  }
+}

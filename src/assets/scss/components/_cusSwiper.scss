@@ -1,0 +1,35 @@
+.swiper-container {
+  width: 100%;
+  height: 300px;
+  @media (min-width: 568px) {
+    height: calc(100vh - 52px);
+  }
+  @media (min-width: 992px) {
+    height: calc(100vh - 63px);
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .3);
+  transition: opacity .5s;
+  display: none;
+  &::after {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 992px) {
+    display: flex;
+  }
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+  opacity: 0;
+}
+
+.u-swiper__text {
+  line-height: 1.8;
+  letter-spacing: .2rem;
+  background-color: rgba(0, 0 , 0, .3);
+}

@@ -1,0 +1,113 @@
+.p-checkout {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  font-size: 0.9rem;
+  &__item {
+    position: relative;
+    display: flex;
+    flex:auto;
+    flex-direction: column;
+    align-items: center;
+    &:first-child .p-checkout__step::before,
+    &:last-child .p-checkout__step::after {
+      display: none;
+    }
+    &:first-child .p-checkout__step,
+    &.active .p-checkout__step,
+    &.active .p-checkout__step::after,
+    &.active + & .p-checkout__step,
+    &.active + & .p-checkout__step::before {
+      background-color: darken($info, 15%);
+    }
+  }
+  &__step {
+    background-color: lighten($info, 5%);
+    color: $light;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    &::before {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 50%;
+      position: absolute;
+      z-index: -1;
+      top: calc(35px / 2 - 1px);
+      left: 0;
+      background-color: lighten($info, 5%);
+    }
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 50%;
+      position: absolute;
+      z-index: -1;
+      top: calc(35px / 2 - 1px);
+      right: 0;
+      background-color: lighten($info, 5%);
+    }
+  }
+  &__grid {
+    padding: 0.5rem;
+    border-bottom: 1px solid $secondary;
+    display: grid;
+    grid-template-areas: "title title btn"
+                         "title title price"
+                         "qty total total";
+    grid-template-columns: 2fr 2fr 1fr;
+    @media (min-width: 568px) {
+      padding: 1rem;
+      grid-template-areas: "title price qty total btn";
+      grid-template-columns: 4fr 2fr 3fr 2fr 1fr;
+    }
+    &__title {
+      grid-area: title;
+      display: flex;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      @media (min-width: 568px) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    &__price {
+      grid-area: price;
+      text-align: right;
+      @media (min-width: 568px) {
+        padding-right: 1rem;
+      }
+      @media (min-width: 768px) {
+        padding-right: 2rem;
+      }
+    }
+    &__qty {
+      grid-area: qty;
+      align-self: center;
+      @media (min-width: 568px) {
+        align-self: start;
+      }
+    }
+    &__total {
+      grid-area: total;
+      text-align: right;
+      align-self: center;
+      @media (min-width: 568px) {
+        align-self: start;
+      }
+    }
+    &__btn {
+      grid-area: btn;
+      text-align: right;
+      @media (min-width: 568px) {
+        margin-top: -0.25rem;
+        padding-right: .5rem;
+      }
+    }
+  }
+}

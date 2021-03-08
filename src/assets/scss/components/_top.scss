@@ -1,0 +1,17 @@
+.c-top {
+  position: fixed;
+  z-index: 1029;
+  bottom: 2rem;
+  right: 2rem;
+  box-sizing: content-box;
+  box-shadow: 0 1px 5px $gray-500;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($white, .8);
+  opacity: 0;
+  transition: .4s opacity;
+}

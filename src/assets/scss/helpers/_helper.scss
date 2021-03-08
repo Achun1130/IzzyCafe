@@ -1,0 +1,83 @@
+.u-main__height {
+  margin-top: 52px!important;
+  min-height: calc(100vh - 52px - 74px);
+  @media (min-width: 568px) {
+    min-height: calc(100vh - 52px - 42px);
+  }
+  @media (min-width: 992px) {
+    margin-top: 63px!important;
+    min-height: calc(100vh - 63px - 42px);
+  }
+}
+
+.u-fadeUp {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 2s, opacity 2s;
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.u-fadeIn {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.u-border-left-title {
+  border-left: 5px solid #a7d098;
+}
+
+.u-shadow-left-title {
+  box-shadow: -5px 0 #a7d098;
+}
+
+.u-border-sm {
+  border-width: 1px!important;
+}
+
+.u-bg-cover {
+  background-position: center;
+  background-size: cover;
+}
+
+.u-bg-transparent {
+  background-color: transparent!important;
+}
+
+.u-underline:hover {
+  text-decoration: underline;
+}
+
+.u-fz-sm {
+  font-size: .9rem;
+}
+
+.u-shadow-top {
+  box-shadow: -1px 0 5px $gray-500;
+}
+
+.u-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.u-lh-1 {
+  line-height: 1;
+}
+
+.u-hover-opacity {
+  opacity: 0!important;
+  &:hover {
+    opacity: 1!important;
+  }
+}

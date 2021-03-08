@@ -1,0 +1,21 @@
+.c-next {
+  position: absolute;
+  bottom: calc(100% + .5rem);
+  z-index: 1;
+  transform: translate(-50%, 0);
+  left: 50%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .5);
+  color: $white;
+  padding: .75rem;
+  animation: next .6s linear infinite alternate;
+}
+
+@keyframes next {
+  from {
+    transform: translate(-50%, 0);
+  }
+  to {
+    transform: translate(-50%, 20%);
+  }
+}

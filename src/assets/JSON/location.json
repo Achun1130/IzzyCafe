@@ -1,0 +1,47 @@
+[
+  {
+    "name": "IZZY CAFE 安平總店",
+    "address": "台南市安平區安平路346之1號",
+    "href": "https://goo.gl/maps/iDjg3GmwVzz3tBWR8",
+    "weekday": "08：30 - 18：00",
+    "weekend": "08：30 - 22：00",
+    "phone3": "358",
+    "phone4": "8388",
+    "email": "izzycafa@yahoo.com.tw",
+    "img": "https://lh5.googleusercontent.com/p/AF1QipNtrumxHdoBzQB_xZ3aXPHtrrzmG26eQqClbozx=s387-k-no",
+    "website": "https://www.facebook.com/Izzy-Cafe-148545115208912"
+  },
+  {
+    "name": "Mini izzy cafe 中華店",
+    "address": "台南市東區中華東路三段72號",
+    "href": "https://g.page/miniizzycafe?share",
+    "weekday": "07：30 - 18：00",
+    "weekend": "08：00 - 17：00",
+    "phone3": "290",
+    "phone4": "1820",
+    "img": "https://scontent.ftpe10-1.fna.fbcdn.net/v/t31.0-8/22104635_728869283976920_5157362495722594144_o.jpg?_nc_cat=102&ccb=3&_nc_sid=19026a&_nc_ohc=HBR95flKmu4AX-g6Y_2&_nc_ht=scontent.ftpe10-1.fna&oh=fdd8712adebd5a46163c0e514fe90e8d&oe=605CD7F0",
+    "website": "https://mini-izzy-cafe.business.site/?utm_source=gmb&utm_medium=referral"
+  },
+  {
+    "name": "Mini Izzy cafe 民族店",
+    "address": "台南市中西區民族路三段150號",
+    "href": "https://goo.gl/maps/iNTh7LbxBWwmLz2Y7",
+    "weekday": "07：30 - 18：30",
+    "weekend": "07：30 - 18：30",
+    "phone3": "220",
+    "phone4": "0250",
+    "img": "https://lh5.googleusercontent.com/p/AF1QipN464oKSVsAmmgs_zLI0p_KrymkLyeHVSKJbKfH=s451-k-no",
+    "website": "https://www.facebook.com/Mini-Izzy-cafe-%E6%B0%91%E6%97%8F%E5%BA%97-620577965025976/"
+  }
+  ,{
+    "name": "Mini Izzy cafe 小東店",
+    "address": "台南市永康區小東路553號",
+    "href": "https://goo.gl/maps/3ERs2mBKSZW5xWCQ8",
+    "weekday": "07：30 - 19：00",
+    "weekend": "07：30 - 19：00",
+    "phone3": "312",
+    "phone4": "1712",
+    "img": "https://lh5.googleusercontent.com/p/AF1QipO6JUzTjmqmsTc2g4SBwPmx5ByrmU1Q52tSTrsO=s387-k-no",
+    "website": "https://zh-tw.facebook.com/miniizzycoffee/"
+  }
+]

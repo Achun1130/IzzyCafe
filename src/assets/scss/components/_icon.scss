@@ -1,0 +1,47 @@
+.c-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.25rem;
+  padding: 0.625rem;
+  box-sizing: content-box;
+  &__bars {
+    position: relative;
+    z-index: $zindex-modal;
+    height: 100%;
+    width: 100%;
+    &__item {
+      position: absolute;
+      top: 50%;
+      margin-top: -.1125rem;
+      height: 15%;
+      width: 100%;
+      background-color: $white;
+      border-radius: 20px;
+      transition: .4s transform, .4s width, .4s opacity;
+      &:nth-child(1) {
+        transform: translateY(-.5rem);
+      }
+      &:nth-child(3) {
+        transform: translateY(.5rem);
+      }
+    }
+    &.active &__item{
+      background-color: $primary;
+      transform: translateY(0);
+    }
+    &.active &__item:nth-child(1){
+      transform: rotate(45deg);
+    }
+    &.active &__item:nth-child(2){
+      width: 0%;
+      opacity: 0;
+    }
+    &.active &__item:nth-child(3){
+      transform: rotate(-45deg);
+    }
+  }
+}

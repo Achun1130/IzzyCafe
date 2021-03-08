@@ -1,0 +1,205 @@
+.p-navheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background-color: $primary;
+  box-shadow: 0 1px 5px $gray-700;
+  @media (min-width: 992px) {
+   padding-left: 2rem; 
+   padding-right: 2rem;
+  }
+  &__brand {
+    display: block;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  &__nav {
+    position: fixed;
+    z-index: $zindex-modal-backdrop;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(#000, .2);
+    visibility: hidden;
+    opacity: 0;
+    transition: .4s all;
+    @media (min-width: 992px) {
+      position: static;
+      background-color: transparent;
+      visibility: visible;
+      opacity: 1;
+    }
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      .p-navheader__nav__body {
+        transform: translateX(0);
+      }
+    }
+    &__body {
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      z-index: $zindex-modal;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: .4s all;
+      background-color: $light;
+      overflow-y: scroll;
+      @media (min-width: 992px) {
+        position: static;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        transform: translateX(0);
+        background-color: transparent;
+        overflow: visible;
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    @media (min-width: 992px) {
+      &:hover > .p-navheader__link .p-navheader__link__hover::before {
+        transform: translateX(-50%) scale(1) rotate(-4deg);
+        opacity: 1;
+      }
+      &:hover > .p-navheader__link {
+        color: $primary;
+      }
+      &:hover .p-navheader__menu {
+        min-height: 192px;
+      }
+      &:hover .p-rotate180 {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &__item:first-child {
+    margin-top: 45.59px;
+    @media (min-width: 992px) {
+      margin-top: 0;
+    }
+  }
+  &__link {
+    display: block;
+    color: $primary;
+    padding: .625rem 4.5rem;
+    &.active, &:hover {
+      color: $light;
+    }
+    &.active .p-rotate180 {
+      transform: rotate(180deg);
+    }
+    &.active + .p-navheader__menu {
+      max-height: 176px;
+    }
+    @media (min-width: 992px) {
+      color: $light;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      &.active, &:hover {
+        color: $primary;
+      }
+      &.active + .p-navheader__menu {
+        max-height: 192px;
+      }
+    }
+    &__hover {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(0, 1) rotate(-4deg);
+        opacity: 0;
+        height: 1.5rem;
+        width: 150%;
+        background-color: $primary;
+        transition: .6s all;
+        @media (min-width: 992px) {
+          background-color: #fff;
+        }
+      }
+    }
+    &:hover &__hover::before, &.active &__hover::before {
+      transform: translateX(-50%) scale(1) rotate(-4deg);
+      opacity: 1;
+    }
+  }
+  &__menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: .6s max-height;
+    padding-left: 0;
+    margin-left: 1rem;
+    list-style: none;
+    @media (min-width: 992px) {
+      margin-left: 0;
+      position: absolute;
+      z-index: 1;
+      top: 44px;
+      background-color: $primary;
+      .p-navheader__link {
+        padding: .75rem 2rem;
+      }
+    }
+  }
+  &__num {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    background-color: $danger;
+    text-align: center;
+  }
+  &__search {
+    position: fixed;
+    z-index: $zindex-modal;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .6s;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    &__body {
+      width: 80%;
+      background-color: rgba(255, 255, 255, .8);
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.p-rotate180 {
+  transform: rotate(0deg);
+  transition: .4s all;
+  &.active {
+    transform: rotate(180deg);
+  }
+}

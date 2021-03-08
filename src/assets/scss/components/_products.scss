@@ -1,0 +1,118 @@
+.c-product__card {
+  position: relative;
+  display: flex;
+  border: 1px solid rgba($primary, .6);
+  padding: 0.5rem;
+  background-image: url('~@/assets/images/vintage-concrete.png');
+  &__img {
+    display: block;
+    width: 150px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    @media (min-width: 992px) {
+      &__text {
+        background-color: rgba($white, .7);
+        height: 100%;
+        line-height: 150px;
+        text-align: center;
+        opacity: 0;
+        transition: .4s opacity;
+      }
+      &:hover .c-product__card__img__text {
+        opacity: 1;
+      }
+    }
+  }
+  &__title {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__body {
+    flex: 1;
+    padding: .5rem .5rem .5rem 1rem;
+    @media (min-width: 568px) {
+      display: flex;
+    }
+  }
+  &__price {
+    color: $danger;
+    font-size: 1.25rem;
+    margin-right: .25rem;
+  }
+  &__sale {
+    max-width: 70px;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: -.5rem;
+    left: -.5rem;
+  }
+}
+
+.graphic .c-product__card {
+  flex-direction: column;
+  border: 0;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  box-shadow: 1px 1px 5px $gray-500;
+  transition: .4s all;
+  @media (min-width: 992px) {
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 1px 1px 5px $gray-600;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 150px;
+  }
+  &__body {
+    padding: .5rem .5rem 1rem .5rem;
+    @media (min-width: 568px) {
+      flex-direction: column;
+    }
+  }
+}
+
+a {
+  .c-hover {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scale(0, 1);
+      opacity: 0;
+      height: .5rem;
+      width: 150%;
+      background-color: #fff;
+      transition: .6s all;
+    }
+  }
+  &:hover .c-hover::before, & .c-hover.active::before {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.c-product__banner {
+  width: 100%;
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('~@/assets/images/banner-4.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 768px) {
+    height: 300px;
+  }
+}

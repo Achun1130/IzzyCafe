@@ -1,6 +1,6 @@
 <template>
   <main>
-    <swiper-banner></swiper-banner>
+    <SwiperBanner></SwiperBanner>
     <section class="p-md-5 position-relative js-next">
       <a href="#" class="c-next" @click.prevent="goNext()">
         <i class="fas fa-fw fa-lg fa-angle-double-down"></i>
@@ -14,8 +14,8 @@
           </div>
         </div>
         <div class="col-lg-8">
-          <div class="row no-gutters">
-            <div class="col-4">
+          <div class="d-flex">
+            <div class="flex-fill">
               <router-link class="p-home__nav__link border-right-0"
                 to="/products/snacks">
                 <span>甜點品項</span>
@@ -24,16 +24,16 @@
                   'url(' + require('@/assets/images/nav-1.jpg') + ')' }"></div>
               </router-link>
             </div>
-            <div class="col-4">
-              <router-link class="p-home__nav__link u-bg-cover text-white" to="/products/beans">
+            <div class="flex-fill">
+              <router-link class="p-home__nav__link" to="/products/beans">
                 <span>精選豆單</span>
                 <div class="p-home__nav__background"
                   :style="{ 'background-image':
                   'url(' + require('@/assets/images/nav-2.jpg') + ')' }"></div>
               </router-link>
             </div>
-            <div class="col-4">
-              <router-link class="p-home__nav__link p-home__nav__link--white border-left-0"
+            <div class="flex-fill">
+              <router-link class="p-home__nav__link border-left-0"
                 to="products/gifts"
                 >
                 <span>禮盒專區</span>
@@ -96,7 +96,7 @@
         </div>
       </div>
     </section>
-    <swiper-product></swiper-product>
+    <SwiperProduct></SwiperProduct>
   </main>
 </template>
 <script>

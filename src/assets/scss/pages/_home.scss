@@ -9,9 +9,9 @@
     writing-mode: vertical-lr;
     letter-spacing: .5rem;
     padding: 1rem 0;
-    color: $dark;
+    color: darken($primary, 15%);
     border: 1px solid $white;
-    background-color: rgba($light, .2);
+    background-color: rgba($light, .5);
     overflow: hidden;
     transition: all .6s;
     @media (min-width: 568px) {
@@ -22,8 +22,7 @@
       padding: 4rem 0;
     }
     &:hover {
-      color: $light;
-      background-color: rgba($light, 0);
+      color: darken($primary, 15%);
       .p-home__nav__background {
         filter: blur(0.1px);
         transform: scale(1.2);
@@ -76,7 +75,6 @@ $intro-width: 30px;
     margin-top: $intro-width;
     margin-right: $intro-width;
     box-shadow: 5px 5px 20px $gray-500, -5px -5px 20px $gray-500;
-    background-position: center;
     background-size: cover;
     @media (min-width: 568px) {
       height: 400px;
@@ -142,10 +140,11 @@ $intro-width: 30px;
 }
 
 .p-home__product {
-  background-image: url('~@/assets/images/product-background.jpeg'); background-attachment: fixed; background-position: left;
+  background-image: url('~@/assets/images/product-background-sm.jpg'); background-attachment: fixed; background-position: left;
   background-size: cover;
   @media (min-width: 768px) {
     background-position: center;
+    background-image: url('~@/assets/images/product-background.jpeg'); 
   }
 
 }

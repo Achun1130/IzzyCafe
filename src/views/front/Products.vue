@@ -48,22 +48,22 @@
       <div :class="{ 'col-12': !isGraphic,
         'col-lg-4': isGraphic, 'col-sm-6': isGraphic, 'mb-4': isGraphic }"
         v-for="(item, key) in pageProducts" :key="item.id">
-        <div class="c-product__card u-fadeIn"
-          :class="{ 'border-top-0': key !== 0 && !isGraphic }">
+        <a href="#" class="c-product__card u-fadeIn"
+          :class="{ 'border-top-0': key !== 0 && !isGraphic }"
+          @click.stop.prevent="pushPath(item.id)"
+          title="查看更多">
           <img src="@/assets/images/onsale_icon.png" alt="sale image"
             class="c-product__card__sale" v-if="item.origin_price !== item.price">
-          <a href="#" class="c-product__card__img"
-            :style="{ 'background-image': 'url(' + item.imageUrl + ')' }"
-            @click.prevent="pushPath(item.id)">
+          <div class="c-product__card__img"
+            :style="{ 'background-image': 'url(' + item.imageUrl + ')' }">
             <div class="c-product__card__img__text d-none d-lg-block">
               <i class="fas fa-search mr-2"></i>查看更多
             </div>
-          </a>
+          </div>
           <div class="c-product__card__body">
             <div class="d-flex flex-column mb-2"
               :class="{ 'mr-sm-2': !isGraphic, 'mb-sm-0': !isGraphic }">
-              <a href="#" class="c-product__card__title" title="查看更多"
-                @click.prevent="pushPath(item.id)">{{ item.title }}</a>
+              <h4 class="c-product__card__title">{{ item.title }}</h4>
               <p class="d-none d-sm-block" v-if="!isGraphic">{{ item.description }}</p>
               <div :class="{ 'mt-auto': !isGraphic }">
                 <b class="c-product__card__price">NT{{ item.price | currency }}</b>
@@ -89,7 +89,7 @@
               <button class="btn btn-primary btn-sm mt-2 text-nowrap" type="button"
                 :class="{ 'mt-sm-auto': !isGraphic,
                 'disabled': modalLoading && item.id === productId }"
-                @click="showProduct(item.id)">
+                @click.stop.prevent="showProduct(item.id)">
                 <i class="fas fa-shopping-cart mr-1"></i>
                 加入購物車
                 <i class="fas fa-spinner fa-spin ml-1"
@@ -97,17 +97,17 @@
               </button>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
-    <pagination :data="newProducts" @filterData="filterData"></pagination>
+    <ProductPagination :data="newProducts" @filterData="filterData"></ProductPagination>
   </main>
 </template>
 <script>
 import $ from 'jquery';
 import { mapGetters } from 'vuex';
 
-import Pagination from '@/components/ProductPagination.vue';
+import ProductPagination from '@/components/ProductPagination.vue';
 
 export default {
   name: 'Products',
@@ -238,7 +238,7 @@ export default {
       this.filterNewProducts);
   },
   components: {
-    Pagination,
+    ProductPagination,
   },
 };
 </script>

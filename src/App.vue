@@ -5,20 +5,20 @@
         <img src="@/assets/images/loading-unscreen.gif" alt="" width="200" height="200">
       </template>
       <template slot="after">
-        <div class="loadingio-spinner-ellipsis-qr5cx9upowh"><div class="ldio-ww3qqn4yenm">
+        <div class="loading-dots"><div class="loading-dots-item">
         <div></div><div></div><div></div><div></div><div></div>
         </div></div>
       </template>
     </loading>
     <header>
-      <navheader></navheader>
+      <Navheader></Navheader>
     </header>
-    <alert></alert>
-    <sidebar-cart></sidebar-cart>
-    <scroll-top></scroll-top>
+    <Alert></Alert>
+    <SidebarCart></SidebarCart>
+    <ScrollTop></ScrollTop>
     <router-view class="u-main__height"></router-view>
-    <index-footer></index-footer>
-    <product-modal></product-modal>
+    <IndexFooter></IndexFooter>
+    <ProductModal></ProductModal>
   </div>
 </template>
 

@@ -44,11 +44,16 @@
       </div>
       <a href="#" class="text-white position-relative p-2"
         @click.prevent="TOGGLECART()"
-        data-toggle="tooltip" data-trigger="hover" title="購物車">
-        <i class="fas fa-lg fa-fw fa-shopping-cart"></i>
-        <span v-if="carts.length" class="p-navheader__num">
-          {{ carts.length > 9 ? '9+' : carts.length }}
-        </span>
+          data-toggle="tooltip" data-trigger="hover" title="購物車">
+        <i class="fas fa-lg fa-fw fa-shopping-cart position-relative"
+          :class="{ 'p-alert': !carts.length }">
+          <!-- <span v-if="!carts.length"
+            class="p-navheader__num p-navheader__num--zero">
+          </span> -->
+          <span v-if="carts.length" class="p-navheader__num">
+            {{ carts.length > 9 ? '9+' : carts.length }}
+          </span>
+        </i>
       </a>
     </div>
     <div class="p-navheader__nav ml-lg-auto"
@@ -199,13 +204,13 @@ export default {
     },
   },
   mounted() {
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-    this.slideId();
-    this.slideActive();
-    this.$router.beforeEach((to, from, next) => {
-      this.showSidebarMenu = false;
+    const vm = this;
+    $('[data-toggle="tooltip"]').tooltip();
+    vm.slideId();
+    vm.slideActive();
+    vm.$router.beforeEach((to, from, next) => {
+      vm.showSidebarMenu = false;
+      vm.showMenu = false;
       next();
     });
   },

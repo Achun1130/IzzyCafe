@@ -7,8 +7,8 @@ import { messages } from 'vee-validate/dist/locale/zh_TW.json';
 
 Object.keys(rules).forEach((rule) => {
   extend(rule, {
-    ...rules[rule], // copies rule configuration
-    message: messages[rule], // assign message
+    ...rules[rule],
+    message: messages[rule],
   });
 });
 

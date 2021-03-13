@@ -1,6 +1,6 @@
 <template>
   <div class="container pt-4">
-    <breadcrumb :title="[$route.name]"></breadcrumb>
+    <Breadcrumb :title="[$route.name]"></Breadcrumb>
     <main class="row u-fadeIn ">
       <div class="col-sm-6 mb-3" v-for="(item, key) in locations" :key="key">
         <div class="row">

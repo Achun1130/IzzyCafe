@@ -24,7 +24,7 @@
             <span class="text-danger" v-if="!item.is_enabled">未啟用</span>
           </td>
           <td class="p-0">
-            <a href="#" @click.stop="delCouponModal(item)"
+            <a href="#" @click.stop.prevent="delCouponModal(item)"
               class="d-block text-danger p-3">
               <i class="fas fa-lg fa-minus-circle"></i>
               <span class="sr-only">刪除</span>
@@ -99,8 +99,8 @@
         </div>
       </div>
     </div>
-    <del-modal :data="delCoupon" type="coupon" @delData="getCoupons"></del-modal>
-    <pagination :pagination="data.pagination" @changePage="getCoupons"></pagination>
+    <DelModal :data="delCoupon" type="coupon" @delData="getCoupons"></DelModal>
+    <Pagination :pagination="data.pagination" @changePage="getCoupons"></Pagination>
   </div>
 </template>
 <script>

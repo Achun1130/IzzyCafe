@@ -1,6 +1,6 @@
 <template>
   <div class="col-md-9">
-    <a href="#" class="u-underline" @click="goBack">
+    <a href="#" class="u-underline" @click.prevent="goBack">
       <i class="fas fa-reply mr-2"></i>返回前頁
     </a>
     <main class="row my-3" v-if="product.title">
@@ -38,14 +38,14 @@
         <del v-if="product.origin_price !== product.price" class="text-muted">
           NT{{ product.origin_price | currency }}
         </del>
-        <validation-observer v-slot="{ handleSubmit }">
+        <ValidationObserver v-slot="{ handleSubmit }">
           <form class="row mt-2 no-gutters"
           @submit.prevent="handleSubmit(addCart($event))">
             <div class="col-12">
               <label for="qty" class="mt-2">數量</label>
             </div>
             <div class="col-12 col-sm-6">
-              <qty-button :data="data" @getQty="getQty" :qtyClass="['pr-sm-1']"></qty-button>
+              <QtyButton :data="data" @getQty="getQty" :qtyClass="['pr-sm-1']"></QtyButton>
             </div>
             <div class="w-100 mb-2"></div>
             <div class="col-12">
@@ -63,7 +63,7 @@
               </div>
             </div>
           </form>
-        </validation-observer>
+        </ValidationObserver>
       </div>
       <div class="col-12 mt-4 mb-3">
         <ul class="d-flex text-center py-2 list-unstyled mb-0">

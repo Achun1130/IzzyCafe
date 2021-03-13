@@ -1,5 +1,5 @@
 <template>
-  <validation-provider class="input-group" :class="qtyClass"
+  <ValidationProvider class="input-group" :class="qtyClass"
     name="數量" rules="required|min_value:1|max_value:99|numeric"
     v-slot="{ errors }">
     <div class="input-group-prepend">
@@ -17,7 +17,7 @@
       </button>
     </div>
     <span class="d-block invalid-feedback">{{ errors[0] }}</span>
-  </validation-provider>
+  </ValidationProvider>
 </template>
 <script>
 export default {

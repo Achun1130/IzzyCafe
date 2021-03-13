@@ -38,15 +38,15 @@
             <div class="w-100"></div>
             <hr class="w-100 mt-4">
           </div>
-          <validation-observer v-slot="{ handleSubmit }">
+          <ValidationObserver v-slot="{ handleSubmit }">
             <form class="row"
             @submit.prevent="handleSubmit(addCart)">
               <div class="col-auto">
                 <label for="qty" class="mt-2">數量</label>
               </div>
               <div class="col col-sm-4">
-                <qty-button :data="data" @getQty="getQty"
-                  :qtyClass="['pr-sm-1', 'input-group-sm']"></qty-button>
+                <QtyButton :data="data" @getQty="getQty"
+                  :qtyClass="['pr-sm-1', 'input-group-sm']"></QtyButton>
               </div>
               <div class="col-12 col-sm-auto ml-sm-auto mt-3 mt-sm-0">
                 <button type="submit" class="btn btn-info btn-block">
@@ -55,7 +55,7 @@
                 </button>
               </div>
             </form>
-          </validation-observer>
+          </ValidationObserver>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="container pt-4">
     <div class="c-product__banner mb-3 text-center">
-      <p class="u-swiper__text text-white h4-md mb-0 p-2">
+      <p class="c-swiper__text text-white h4-md mb-0 p-2">
         輸入優惠碼
         <a href="#" class="text-white border-bottom border-white"
           data-toggle="tooltip" data-trigger="hover" data-original-title="點擊複製"
@@ -10,10 +10,10 @@
         即可享有 88 折優惠 ～
       </p>
     </div>
-    <breadcrumb :title="title"></breadcrumb>
+    <Breadcrumb :title="title"></Breadcrumb>
     <div class="row">
       <nav class="col-md-3 d-md-block d-none">
-        <products-sidebar></products-sidebar>
+        <ProductsSidebar></ProductsSidebar>
       </nav>
       <router-view></router-view>
     </div>
@@ -66,9 +66,7 @@ export default {
       this.fitlerTitle);
   },
   mounted() {
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
+    $('[data-toggle="tooltip"]').tooltip();
   },
   components: {
     ProductsSidebar,

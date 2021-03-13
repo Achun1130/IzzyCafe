@@ -4,8 +4,10 @@
   border: 1px solid rgba($primary, .6);
   padding: 0.5rem;
   background-image: url('~@/assets/images/vintage-concrete.png');
+  &:hover &__img__text {
+    opacity: 1;
+  }
   &__img {
-    display: block;
     width: 150px;
     height: auto;
     background-size: cover;
@@ -19,18 +21,11 @@
         opacity: 0;
         transition: .4s opacity;
       }
-      &:hover .c-product__card__img__text {
-        opacity: 1;
-      }
     }
   }
   &__title {
-    display: block;
     font-size: 1.25rem;
     font-weight: bold;
-    &:hover {
-      text-decoration: underline;
-    }
   }
   &__body {
     flex: 1;
@@ -108,11 +103,12 @@ a {
   height: 150px;
   background-position: center;
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('~@/assets/images/banner-4.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('~@/assets/images/banner-4-sm.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
   @media (min-width: 768px) {
     height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('~@/assets/images/banner-4.jpg');
   }
 }

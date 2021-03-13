@@ -1,6 +1,6 @@
 <template>
   <main>
-    <validation-observer v-slot="{ handleSubmit }" v-if="cartsData.total" tag="div">
+    <ValidationObserver v-slot="{ handleSubmit }" v-if="cartsData.total" tag="div">
       <form class="row mt-3 u-fadeIn"
         @submit.prevent="handleSubmit(goOrder)">
         <div class="col-lg-8 col-md-7 mb-3">
@@ -9,27 +9,27 @@
               <h3 class="card-title h5 mb-0 font-weight-bold">顧客資料</h3>
             </div>
             <div class="card-body px-sm-3 px-2">
-              <validation-provider class="form-group"
+              <ValidationProvider class="form-group"
                 name="名稱" v-slot="{ errors, classes }" rules="required" tag="div">
                 <label for="name">顧客名稱*</label>
                 <input type="text" class="form-control" id="name"
                   :class="classes" v-model="info.name">
                 <span class="invalid-feedback">{{ errors[0] }}</span>
-              </validation-provider>
-              <validation-provider class="form-group"
+              </ValidationProvider>
+              <ValidationProvider class="form-group"
                 name="電子信箱" v-slot="{ errors, classes }" rules="required|email" tag="div">
                 <label for="email">電子信箱*</label>
                 <input type="email" class="form-control" id="email"
                   :class="classes" v-model="user.email">
                 <span class="invalid-feedback">{{ errors[0] }}</span>
-              </validation-provider>
-              <validation-provider class="form-group"
+              </ValidationProvider>
+              <ValidationProvider class="form-group"
                 name="手機號碼" v-slot="{ errors, classes }" rules="required|numeric" tag="div">
                 <label for="tel">手機號碼*</label>
                 <input type="tel" class="form-control" id="tel" minlength="10" maxlength="10"
                   :class="classes" v-model="info.tel">
                 <span class="invalid-feedback">{{ errors[0] }}</span>
-              </validation-provider>
+              </ValidationProvider>
               <label for="message">訂單備註</label>
               <textarea class="form-control" rows="2"
                 v-model="message" placeholder="有什麼想告訴賣家的嗎？"></textarea>
@@ -45,25 +45,25 @@
                 <input type="checkbox" class="custom-control-input" id="same" v-model="same">
                 <label class="custom-control-label" for="same">收件人資料與顧客資料相同</label>
               </div>
-              <validation-provider class="form-group"
+              <ValidationProvider class="form-group"
                 name="收件人姓名" v-slot="{ errors, classes }" rules="required" tag="div">
                 <label for="addressee">收件人姓名*</label>
                 <input type="text" class="form-control" id="addressee"
                   :class="classes" v-model="user.name">
                 <span class="invalid-feedback">{{ errors[0] }}</span>
                 <span class="u-fz-sm text-muted">請填入收件人真實姓名，以確保順利收件</span>
-              </validation-provider>
-              <validation-provider class="form-group"
+              </ValidationProvider>
+              <ValidationProvider class="form-group"
                 name="收件人手機號碼" v-slot="{ errors, classes }" rules="required|numeric" tag="div">
                 <label for="addressee-tel">收件人手機號碼*</label>
                 <input type="tel" class="form-control" id="addressee-tel"
                   minlength="10" maxlength="10"
                   :class="classes" v-model="user.tel">
                 <span class="invalid-feedback">{{ errors[0] }}</span>
-              </validation-provider>
+              </ValidationProvider>
               <label for="county">收件人地址*</label>
               <div class="form-row mb-2">
-                <validation-provider name="縣市" class="col"
+                <ValidationProvider name="縣市" class="col"
                   v-slot="{ errors, classes }" rules="required">
                   <select id="county" v-model="info.county" class="custom-select" :class="classes"
                     @change="info.dist = ''">
@@ -72,8 +72,8 @@
                       v-for="(value, key, i) in countyData" :key="i">{{ key }}</option>
                   </select>
                   <span class="invalid-feedback">{{ errors[0] }}</span>
-                </validation-provider>
-                <validation-provider name="鄉鎮市區" class="col"
+                </ValidationProvider>
+                <ValidationProvider name="鄉鎮市區" class="col"
                   v-slot="{ errors, classes }" rules="required">
                   <select v-model="info.dist" class="custom-select" :class="classes">
                     <option value="" disabled>請選擇鄉鎮市區</option>
@@ -81,14 +81,14 @@
                       v-for="item in countyData[info.county]" :key="item">{{ item }}</option>
                   </select>
                   <span class="invalid-feedback">{{ errors[0] }}</span>
-                </validation-provider>
+                </ValidationProvider>
               </div>
-              <validation-provider class="form-group mb-0"
+              <ValidationProvider class="form-group mb-0"
                 name="地址" v-slot="{ errors, classes }" rules="required" tag="div">
                 <input type="text" class="form-control"
                   :class="classes" v-model="info.road">
                 <span class="invalid-feedback">{{ errors[0] }}</span>
-              </validation-provider>
+              </ValidationProvider>
             </div>
           </section>
         </div>
@@ -187,7 +187,7 @@
           </section>
         </div>
       </form>
-    </validation-observer>
+    </ValidationObserver>
   </main>
 </template>
 <script>

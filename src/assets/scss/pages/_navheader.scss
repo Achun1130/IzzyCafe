@@ -157,12 +157,12 @@
   }
   &__num {
     position: absolute;
-    top: 0;
-    right: -6px;
+    top: -12px;
+    right: -10px;
     display: block;
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
     font-size: 0.75rem;
     border-radius: 50%;
     background-color: $danger;
@@ -201,5 +201,38 @@
   transition: .4s all;
   &.active {
     transform: rotate(180deg);
+  }
+}
+
+.p-alert {
+  animation: 2s alert alternate infinite linear;
+}
+
+@keyframes alert {
+  0% {
+    transform: rotate(10deg);
+    color: darken($light, 10%);
+  }
+  5% {
+    transform: rotate(-10deg);
+    color: darken($light, 10%);
+  }
+  10% {
+    transform: rotate(10deg);
+    color: darken($light, 10%);
+  }
+  15% {
+    transform: rotate(-10deg);
+    color: darken($light, 10%);
+  }
+  20% {
+    transform: rotate(0deg);
+    color: darken($light, 10%);
+  }
+  30% {
+    color: $white;
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

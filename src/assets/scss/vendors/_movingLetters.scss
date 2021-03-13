@@ -1,4 +1,4 @@
-.ml6 {
+.moving-letters {
   position: relative;
   font-weight: 900;
   font-size: 1.7em;
@@ -7,7 +7,7 @@
   }
 }
 
-.ml6 .text-wrapper {
+.moving-letters .text-wrapper {
   position: relative;
   display: inline-block;
   padding-top: 0.2em;
@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-.ml6 .letter {
+.moving-letters .letter {
   display: inline-block;
   line-height: 1em;
 }

@@ -17,9 +17,12 @@
           <i class="far fa-trash-alt"></i>
         </a>
       </div>
-      <div v-if="!carts.length" class="px-2 py-4">你的購物車是空的</div>
+      <div v-if="!carts.length" class="pt-4 pb-2 text-center">你的購物車是空的</div>
+      <a href="#" @click.prevent="goProducts()"
+        class="btn btn-block btn-sm btn-outline-info mx-2 my-3 w-auto"
+        v-if="!carts.length">前往購物</a>
       <a href="#" class="btn btn-block btn-sm btn-outline-info mx-2 my-3 w-auto"
-        v-if="carts.length !== 0" @click.prevent="goCheckout()">訂單結帳</a>
+        v-if="carts.length" @click.prevent="goCheckout()">訂單結帳</a>
     </section>
   </div>
 </template>
@@ -37,8 +40,12 @@ export default {
       this.$router.push('/checkout');
     },
     pushId(id) {
-      this.$router.push(`/products/${id}`);
       this.TOGGLECART();
+      this.$router.push(`/products/${id}`);
+    },
+    goProducts() {
+      this.HIDECART();
+      this.$router.push('/products');
     },
     ...mapMutations('cartModules', ['TOGGLECART', 'HIDECART', 'GETCARTS']),
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid px-0">
     <div class="row no-gutters">
-      <dashboard-sidebar></dashboard-sidebar>
+      <DashboardSidebar></DashboardSidebar>
       <main role="main" class="col-lg-10 ml-sm-auto px-lg-4">
       <nav class="d-lg-none">
         <ul class="row py-2 list-unstyled no-gutters text-center mb-n1">

@@ -12,20 +12,20 @@
         <div class="col-lg-8 py-3 py-lg-5">
           <swiper class="swiper h-100 graphic py-3 py-lg-5" :options="swiperOption">
             <swiper-slide v-for="item in filterProducts" :key="item.id">
-                <div class="c-product__card">
+                <a href="#" class="c-product__card"
+                  @click.stop.prevent="pushPath(item.id)"
+                  title="查看更多">
                   <img src="@/assets/images/onsale_icon.png" alt="sale image"
                     class="c-product__card__sale" v-if="item.origin_price !== item.price">
-                  <a href="#" class="c-product__card__img"
-                    :style="{ 'background-image': 'url(' + item.imageUrl + ')' }"
-                    @click.prevent="pushPath(item.id)">
+                  <div class="c-product__card__img"
+                    :style="{ 'background-image': 'url(' + item.imageUrl + ')' }">
                     <div class="c-product__card__img__text d-none d-lg-block">
                       <i class="fas fa-search mr-2"></i>查看更多
                     </div>
-                  </a>
+                  </div>
                   <div class="c-product__card__body">
                     <div class="d-flex flex-column mb-2">
-                      <a href="#" class="c-product__card__title h6" title="查看更多"
-                        @click.prevent="pushPath(item.id)">{{ item.title }}</a>
+                      <h4 class="c-product__card__title h6">{{ item.title }}</h4>
                       <div>
                         <b class="c-product__card__price h6">NT{{ item.price | currency }}</b>
                         <del class="text-muted" v-if="item.origin_price !== item.price">
@@ -44,7 +44,7 @@
                       </div>
                       <button class="btn btn-primary btn-sm mt-2 text-nowrap" type="button"
                         :class="{ 'disabled': modalLoading && item.id === productId }"
-                        @click="showProduct(item.id)">
+                        @click.stop.prevent="showProduct(item.id)">
                         <i class="fas fa-shopping-cart mr-1"></i>
                         加入購物車
                         <i class="fas fa-spinner fa-spin ml-1"
@@ -52,7 +52,7 @@
                       </button>
                     </div>
                   </div>
-                </div>
+                </a>
             </swiper-slide>
             <swiper-slide class="d-flex align-items-center justify-content-center">
               <router-link :to="{ name: '所有商品', params: { sort: 'toNew' } }"

@@ -57,11 +57,11 @@ export default ({
       state.product.category = state.product.category.split('-');
     },
     PRODUCTS(state, payload) {
+      payload.forEach((el, i) => {
+        el.category = el.category.split('-');
+        el.num = state.products.length - i;
+      });
       state.products = payload;
-      for (let i = 0; i < state.products.length; i += 1) {
-        state.products[i].category = state.products[i].category.split('-');
-        state.products[i].num = state.products.length - i;
-      }
     },
     CATEGORIES(state) {
       const set = new Set();

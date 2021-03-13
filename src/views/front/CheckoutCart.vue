@@ -5,10 +5,10 @@
         <i class="fas fa-5x fa-shopping-cart text-secondary mb-4"></i>
         <div class="h5 font-weight-bold">你的購物車是空的</div>
         <div class="u-fz-sm mb-3">記得加入商品到你的購物車</div>
-        <router-link to="/products" class="btn btn-info px-4">繼續購物</router-link>
+        <router-link to="/products" class="btn btn-info px-4">前往購物</router-link>
       </div>
     </section>
-    <validation-observer v-slot="{ handleSubmit }">
+    <ValidationObserver v-slot="{ handleSubmit }">
       <form class="row mt-sm-4 mt-3" v-if="carts.length"
         @submit.prevent="handleSubmit(goCheckout)">
         <section class="col-lg-8 mb-3">
@@ -40,8 +40,8 @@
                 </del>
               </div>
               <div class="p-checkout__grid__qty">
-                <qty-button :data="item"
-                  :qtyClass="['input-group-sm', 'pr-sm-1']" :isId="false"></qty-button>
+                <QtyButton :data="item"
+                  :qtyClass="['input-group-sm', 'pr-sm-1']" :isId="false"></QtyButton>
               </div>
               <div class="p-checkout__grid__total">
                 NT{{ item.qty * item.price | currency }}
@@ -89,7 +89,7 @@
           </div>
         </section>
       </form>
-    </validation-observer>
+    </ValidationObserver>
     <div class="modal fade" id="delModal" tabindex="-1"
       aria-labelledby="delModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -136,7 +136,6 @@ export default {
     removeCart() {
       $('#delModal').modal('hide');
       this.$store.dispatch('cartModules/removeCart', this.newCart.id);
-      // this.$bus.$emit('removeCart', this.newCart.id);
     },
     goCheckout() {
       const vm = this;

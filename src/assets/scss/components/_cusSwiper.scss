@@ -28,8 +28,29 @@
   opacity: 0;
 }
 
-.u-swiper__text {
-  line-height: 1.8;
-  letter-spacing: .2rem;
-  background-color: rgba(0, 0 , 0, .3);
+.c-swiper {
+  &__text {
+    line-height: 1.8;
+    letter-spacing: .2rem;
+    background-color: rgba(0, 0 , 0, .3);
+  }
+  &__banner:first-child {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url("~@/assets/images/banner-1-sm.jpg");
+    @media (min-width: 768px) {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url("~@/assets/images/banner-1.jpg");
+    }
+  }
+  &__banner:nth-child(2) {
+    background-image: url("~@/assets/images/banner-2-sm.jpg");
+    @media (min-width: 768px) {
+      background-image: url("~@/assets/images/banner-2.jpg");
+    }
+  }
+  &__banner:last-child {
+    background-image: url("~@/assets/images/banner-3-sm.jpg");
+    background-position: 90% bottom;
+    @media (min-width: 768px) {
+      background-image: url("~@/assets/images/banner-3.jpg");
+    }
+  }
 }

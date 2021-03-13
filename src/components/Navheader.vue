@@ -47,9 +47,6 @@
           data-toggle="tooltip" data-trigger="hover" title="購物車">
         <i class="fas fa-lg fa-fw fa-shopping-cart position-relative"
           :class="{ 'p-alert': !carts.length }">
-          <!-- <span v-if="!carts.length"
-            class="p-navheader__num p-navheader__num--zero">
-          </span> -->
           <span v-if="carts.length" class="p-navheader__num">
             {{ carts.length > 9 ? '9+' : carts.length }}
           </span>

@@ -16,10 +16,6 @@
         <h3 class="h4 font-weight-bold mb-3">
           {{ product.title }}
         </h3>
-        <p class="mb-2">
-          <span v-if="product.category[0] === '精選豆單'">風味筆記：</span>
-          {{ product.description }}
-        </p>
         <div class="mb-3">
           <span v-for="(item, key) in product.category" :key="key"
             class="badge badge-pill badge-info"
@@ -65,7 +61,7 @@
           </form>
         </ValidationObserver>
       </div>
-      <div class="col-12 mt-4 mb-3">
+      <nav class="col-12 mt-4 mb-3">
         <ul class="d-flex text-center py-2 list-unstyled mb-0">
           <li class="w-50 mr-1">
             <a href="#" class="shadow btn btn-block btn-secondary rounded-0 py-2 text-center"
@@ -76,38 +72,55 @@
               @click.prevent="isPayment = true">運送及付款方式</a>
           </li>
         </ul>
-      </div>
+      </nav>
       <div class="col-12">
-        <h4 class="u-border-left-title font-weight-bold pl-3 mb-3 h5-left">
+        <h4 class="u-border-left-title font-weight-bold pl-3">
           {{ !isPayment ? '商品描述' : '運送及付款方式' }}
         </h4>
-        <div class="text-center"
-          v-if="product.category[0] === '精選豆單' && !isPayment">
-          <img class="img-fluid u-fadeIn" src="@/assets/images/beans-01.jpg" alt="beans-01">
-          <img class="img-fluid u-fadeIn" src="@/assets/images/beans-02.jpg" alt="beans-02">
-          <img class="img-fluid u-fadeIn" src="@/assets/images/beans-03.jpg" alt="beans-03">
-        </div>
+        <ul class="u-fadeIn list-unstyled px-4 my-4"
+          v-if="product.content.length !== 1 && !isPayment">
+          <li v-for="(item, key) in product.content" :key="key"
+            class="mb-3">
+            {{ item }}
+          </li>
+        </ul>
+        <p class="px-4 my-4"
+          v-if="product.content.length === 1 && !isPayment">
+          {{ product.description }}
+        </p>
         <div v-if="isPayment"
-          class="text-muted d-flex justify-content-lg-between flex-lg-row flex-column u-fadeIn">
+          class="d-flex justify-content-lg-between flex-lg-row flex-column
+            text-muted u-fadeIn my-4">
           <section>
             <h5>送貨方式</h5>
             <ul class="u-fz-sm">
-              <li>7-11取貨付款</li>
-              <li>7-11取貨付款</li>
-              <li>7-11純取貨不付款</li>
-              <li>新竹物流宅配</li>
+              <li class="mb-2">7-11取貨付款</li>
+              <li class="mb-2">7-11取貨付款</li>
+              <li class="mb-2">7-11純取貨不付款</li>
+              <li class="mb-2">新竹物流宅配</li>
               <li>順豐國際快遞</li>
             </ul>
           </section>
           <section>
             <h5>付款方式</h5>
             <ul class="u-fz-sm">
-              <li>信用卡（支援Visa, Master, JCB）</li>
-              <li>超商代碼（需持代碼至超商印出帳單繳費）</li>
-              <li>7-11 取貨付款</li>
+              <li class="mb-2">信用卡（支援Visa, Master, JCB）</li>
+              <li class="mb-2">超商代碼（需持代碼至超商印出帳單繳費）</li>
+              <li class="mb-2">7-11 取貨付款</li>
               <li>ATM 虛擬代碼繳費（需持代碼至實體ATM或網路銀行繳費）</li>
             </ul>
           </section>
+        </div>
+        <h4 class="u-border-left-title font-weight-bold pl-3">
+          相關商品
+        </h4>
+        <div class="m-4" v-if="!filterProducts.length">目前無相關商品</div>
+        <div class="row graphic my-4" v-if="filterProducts.length">
+          <div class="col-lg-4 col-sm-6 col-12 mb-4"
+            v-for="(item, key) in filterProducts" :key="item.id"
+            :class="{ 'd-lg-none': key === 3 }">
+            <ProductCard :product="item"></ProductCard>
+          </div>
         </div>
       </div>
     </main>
@@ -117,6 +130,7 @@
 import { mapGetters } from 'vuex';
 
 import QtyButton from '@/components/QtyButton.vue';
+import ProductCard from '@/components/ProductCard.vue';
 
 export default {
   name: 'ProductSingle',
@@ -163,10 +177,21 @@ export default {
     },
   },
   computed: {
-    ...mapGetters('productModules', ['product']),
+    filterProducts() {
+      const vm = this;
+      const newPro = this.products.filter((el) => {
+        if (vm.product.category.length > 1) {
+          return el.category[1] === vm.product.category[1] && el.id !== vm.product.id;
+        }
+        return el.category[0] === vm.product.category[0] && el.id !== vm.product.id;
+      });
+      return newPro.filter((el, key) => key < 4);
+    },
+    ...mapGetters('productModules', ['product', 'products']),
   },
   components: {
     QtyButton,
+    ProductCard,
   },
 };
 </script>

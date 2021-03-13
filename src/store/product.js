@@ -55,6 +55,7 @@ export default ({
     PRODUCT(state, payload) {
       state.product = payload;
       state.product.category = state.product.category.split('-');
+      state.product.content = state.product.content.split('\n');
     },
     PRODUCTS(state, payload) {
       payload.forEach((el, i) => {

@@ -139,12 +139,15 @@
                         :class="classes"></textarea>
                       <span class="invalid-feedback">{{ errors[0] }}</span>
                     </ValidationProvider>
-                    <div class="form-group">
+                    <ValidationProvider tag="div"  class="form-group" name="說明內容"
+                      rules="required" v-slot="{ errors, classes }">
                       <label for="content">說明內容</label>
                       <textarea type="text" class="form-control" id="content"
                         placeholder="請輸入產品說明內容"
-                        v-model="newProduct.content"></textarea>
-                    </div>
+                        v-model="newProduct.content"
+                        :class="classes"></textarea>
+                      <span class="invalid-feedback">{{ errors[0] }}</span>
+                    </ValidationProvider>
                     <div class="form-group">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox"

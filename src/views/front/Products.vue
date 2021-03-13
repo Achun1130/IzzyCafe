@@ -185,7 +185,7 @@ export default {
         case '搜尋':
           vm.title = `「${search}」的搜尋結果`;
           vm.newProducts = vm.products.filter((el) => {
-            const str = el.category[0] + el.category[1] + el.description + el.title;
+            const str = el.category[0] + el.category[1] + el.description + el.title + el.content;
             return str.indexOf(search) !== -1;
           });
           if (vm.newProducts.length) {

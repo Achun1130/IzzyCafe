@@ -34,11 +34,11 @@
 }
 
 .u-border-left-title {
-  border-left: 5px solid #a7d098;
+  border-left: 5px solid darken($info, 10%);
 }
 
 .u-shadow-left-title {
-  box-shadow: -5px 0 #a7d098;
+  box-shadow: -5px 0 darken($info, 10%);
 }
 
 .u-border-sm {

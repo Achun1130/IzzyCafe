@@ -4,8 +4,8 @@
   @media (min-width: 568px) {
     height: calc(100vh - 52px);
   }
-  @media (min-width: 992px) {
-    height: calc(100vh - 63px);
+  @media (min-width: 768px) {
+    height: 400px;
   }
 }
 
@@ -35,22 +35,13 @@
     background-color: rgba(0, 0 , 0, .3);
   }
   &__banner:first-child {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url("~@/assets/images/banner-1-sm.jpg");
-    @media (min-width: 768px) {
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url("~@/assets/images/banner-1.jpg");
-    }
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .7)), url("~@/assets/images/banner-1.jpg");
   }
   &__banner:nth-child(2) {
-    background-image: url("~@/assets/images/banner-2-sm.jpg");
-    @media (min-width: 768px) {
-      background-image: url("~@/assets/images/banner-2.jpg");
-    }
+    background-image: url("~@/assets/images/banner-2.jpg");
   }
   &__banner:last-child {
-    background-image: url("~@/assets/images/banner-3-sm.jpg");
-    background-position: 90% bottom;
-    @media (min-width: 768px) {
-      background-image: url("~@/assets/images/banner-3.jpg");
-    }
+    background-image: url("~@/assets/images/banner-3.jpg");
+    background-position: right;
   }
 }

@@ -60,7 +60,7 @@ export default ({
     PRODUCTS(state, payload) {
       payload.forEach((el, i) => {
         el.category = el.category.split('-');
-        el.num = state.products.length - i;
+        el.num = payload.length - 1 - i;
       });
       state.products = payload;
     },

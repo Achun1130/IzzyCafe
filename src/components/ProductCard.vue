@@ -47,6 +47,13 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'ProductCard',
+  props: {
+    product: Object,
+    isAnimate: {
+      type: Boolean,
+      default: false,
+    },
+  },
   methods: {
     pushPath(id) {
       this.$router.push(`/products/${id}`);
@@ -61,14 +68,18 @@ export default {
         });
     },
   },
+  mounted() {
+    if (this.isAnimate) {
+      $(`.c-product__card:eq(${this.product.num})`).attr({
+        'data-aos': 'flip-right',
+        'data-aos-duration': '1000',
+        'data-aos-delay': this.product.num * 250,
+      });
+    }
+  },
   computed: {
     ...mapGetters('productModules', ['productId', 'products']),
     ...mapGetters(['modalLoading']),
-  },
-  props: {
-    product: {
-      type: Object,
-    },
   },
 };
 </script>

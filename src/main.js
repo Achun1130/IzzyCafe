@@ -8,6 +8,8 @@ import VueTypedJs from 'vue-typed-js';
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 import VueAnime from 'vue-animejs';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import App from './App.vue';
 import router from './router';
@@ -28,6 +30,8 @@ Vue.component('swiper-slide', SwiperSlide);
 
 Vue.filter('currency', currency);
 Vue.filter('timestamp', timestamp);
+
+AOS.init();
 
 new Vue({
   router,

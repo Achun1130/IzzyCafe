@@ -1,3 +1,5 @@
+$intro-width: 30px;
+
 .p-home__nav {
   &__link {
     position: relative;
@@ -43,81 +45,73 @@
   }
 }
 
-$intro-width: 30px;
 .p-home__intro {
-  position: relative;
-  padding-top: $intro-width;
-  @media (min-width: 768px) {
-    padding-top: $intro-width * 1.5;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    background-color: darken($light, 10%);
-  }
-  &--info {
-    color: $dark;
-    &::before {
-      background-color: #c4d8c5;
-    }
-    & .p-home__intro__body::before {
-      background-color: #eaf3f7;
-    }
-  }
   &__image {
-    position: relative;
-    height: 250px;
-    margin-top: $intro-width;
-    margin-right: $intro-width;
-    box-shadow: 5px 5px 20px $gray-500, -5px -5px 20px $gray-500;
+    height: 200px;
     background-size: cover;
     @media (min-width: 568px) {
-      height: 400px;
+      height: 350px;
     }
-    @media (min-width: 768px) {
-      height: 100%;
+    @media (min-width: 992px) {
+      width: 80%;
+      margin-top: $intro-width * 2;
+      margin-left: auto;
     }
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: -$intro-width;
+  }
+  &__border {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border: 3px solid $white;
+    @media (min-width: 992px) {
+      left: - $intro-width;
       width: 100%;
-      height: 100%;
-      margin-left: $intro-width;
-      background-color: #fff;
     }
   }
   &__body {
     position: relative;
-    margin-top: $intro-width;
-    margin-left: $intro-width;
-    padding-right: 1rem;
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: -$intro-width;
-      left: -$intro-width;
-      width: $intro-width * 3;
-      height: $intro-width * 3;
-      background-color: $light;
+    padding: $intro-width * 1.5
+      $intro-width / 2
+      $intro-width;
+    @media (min-width: 568px) {
+      margin-left: $intro-width;
+      margin-right: $intro-width;
+    }
+    @media (min-width: 992px) {
+      margin-left: $intro-width * 1.5;
+      margin-right: 0;
+      padding: $intro-width * 3
+        0
+        $intro-width * 1.5
+        $intro-width / 2;
     }
   }
   &__heading {
+    position: relative;
     font-size: 1.4rem;
     letter-spacing: .25rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    @media (min-width: 768px) {
+    @media (min-width: 568px) {
       font-size: 1.75rem;
       letter-spacing: .3rem;
       margin-bottom: 2rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -$intro-width / 2;
+      width: $intro-width * 2;
+      height: $intro-width * 2;
+      background-color: $light;
+      @media (min-width: 568px) {
+        top: - $intro-width;
+        left: -$intro-width;
+        width: $intro-width * 3;
+        height: $intro-width * 3;
+      }
     }
   }
   &__content {
@@ -129,22 +123,77 @@ $intro-width: 30px;
     font-size: 3rem;
     letter-spacing: 1rem;
     font-weight: bold;
-    margin-top: 1.5rem;
     margin-bottom: 0;
     color: $white;
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       font-size: 5rem;
-      margin-top: 2rem;
+      margin-top: auto;
     }
   }
 }
 
-.p-home__product {
-  background-image: url('~@/assets/images/product-background-sm.jpg'); background-attachment: fixed; background-position: left;
-  background-size: cover;
-  @media (min-width: 768px) {
-    background-position: center;
-    background-image: url('~@/assets/images/product-background.jpeg'); 
+.p-home__intro--reverse {
+  @media (min-width: 992px) {
+    text-align: right;
   }
+  .p-home__intro {
+    &__image {
+      @media (min-width: 568px) {
+        height: 250px;
+      }
+      @media (min-width: 992px) {
+        margin-left: 0;
+      }
+    }
+    &__border {
+      @media (min-width: 992px) {
+        left: auto;
+        right: - $intro-width;
+      }
+    }
+    &__body {
+      @media (min-width: 992px) {
+        margin-left: 0;
+        margin-right: $intro-width * 1.5;
+        padding: $intro-width * 3
+          $intro-width / 2
+          $intro-width * 1.5
+          0;
+      }
+    }
+    &__heading::before {
+      @media (min-width: 992px) {
+        left: auto;
+        right: -$intro-width;
+      }
+    }
+  }
+}
 
+.p-home__subscribe {
+  background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url("~@/assets/images/subscribe-1.jpg");
+  background-position: center;
+  background-size: cover;
+  &__text {
+    background-color: rgba($white, .3);
+  }
+}
+
+@media (min-width: 992px) {
+  .p-home__square {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: - $intro-width * 3;
+      width: $intro-width * 2;
+      height: $intro-width * 2;
+      background-color: $light;
+    }
+    &--reverse::before {
+      right: auto;
+      left: - $intro-width * 3;
+    }
+  }
 }

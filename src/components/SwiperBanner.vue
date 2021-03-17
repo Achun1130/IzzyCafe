@@ -24,7 +24,7 @@
         :contentType="'html'"
         :loop="false"
         :showCursor="false"
-        class="p-md-5 px-2 py-3 ml-md-5 text-pre-line"
+        class="px-md-5 px-2 py-3 m-md-5 text-pre-line"
         v-if="status.msg">
         <p class="typing rounded px-3 py-3 mb-0 mx-sm-0 mx-auto c-swiper__text h6-sm u-fz-sm"></p>
       </vue-typed-js>

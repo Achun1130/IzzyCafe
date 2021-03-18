@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="Page navigation">
+  <nav aria-label="Page navigation" v-if="getPageTotal > 1">
     <ul class="pagination justify-content-center mt-3">
       <li class="page-item"
         :class="{ 'disabled': current_page === 1 || !data.length }">

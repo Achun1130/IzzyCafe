@@ -5,10 +5,6 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '*',
-    redirect: '/',
-  },
-  {
     name: '首頁',
     path: '/',
     component: () => import('../views/front/Home.vue'),
@@ -109,6 +105,10 @@ const routes = [
     name: '門市資訊',
     path: '/location',
     component: () => import('../views/front/Location.vue'),
+  },
+  {
+    path: '*',
+    redirect: '/',
   },
 ];
 

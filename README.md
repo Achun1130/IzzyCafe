@@ -1,4 +1,4 @@
-# izzy_0307
+# IzzyCafe
 
 ## Project setup
 ```

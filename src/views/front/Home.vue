@@ -139,7 +139,7 @@
                 <label class="u-fz-sm mb-3" for="subscribe">訂閱我們，隨時收到最新優惠通知！</label>
                 <form>
                   <div class="input-group mb-0">
-                    <input type="text" class="form-control" placeholder="請輸入 Email..."
+                    <input type="email" class="form-control" placeholder="請輸入 Email..."
                       id="subscribe">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">訂閱</button>

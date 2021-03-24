@@ -1,5 +1,5 @@
 <template>
-  <div class="p-cart" :class="{ 'active': isShow }" @click.self="TOGGLECART()">
+  <div class="p-cart p-cart--right" :class="{ 'active': isShow }" @click.self="TOGGLECART()">
     <section class="p-cart__body">
       <h3 class="p-cart__title">購物車</h3>
       <div class="p-cart__item" v-for="item in carts" :key="item.id">

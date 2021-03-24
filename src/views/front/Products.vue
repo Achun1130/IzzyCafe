@@ -29,7 +29,7 @@
       </div>
     </div>
     <nav v-if="productsNav.isShow">
-      <ul class="d-flex list-unstyled no-gutters text-center mb-n1">
+      <ul class="d-flex list-unstyled text-center mb-n1">
         <li v-for="(item, key) in productsNav.list" :key="key"
           class="flex-fill py-2">
           <a href="#" class="d-block u-border-sm"

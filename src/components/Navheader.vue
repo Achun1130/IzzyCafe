@@ -9,13 +9,13 @@
         <span class="c-icon__bars__item"></span>
       </div>
     </a>
-    <router-link class="p-navheader__brand" to="/">
+    <router-link class="p-navheader__brand offset-lg-0 offset-1" to="/">
       <img src="@/assets/images/logo_izzy_md.jpg" alt="logo_izzy_md"
       class="d-lg-inline-block d-none">
       <img src="@/assets/images/logo_izzy_sm.jpg" alt="logo_izzy_sm" class="d-lg-none">
       <h1 class="sr-only">Izzy Cafe</h1>
     </router-link>
-    <div class="pl-lg-2 order-lg-1">
+    <div class="pl-lg-2 order-lg-1 ml-lg-0 ml-auto">
       <a href="#" class="text-white py-2 px-1"
         data-toggle="tooltip" data-trigger="hover" title="搜尋"
         @click.prevent="showSearch = true">
@@ -146,6 +146,9 @@ export default {
           const headerHeight = $('.p-navheader').outerHeight();
           const href = $(this).attr('href');
           const targetPos = $(href).offset().top - headerHeight;
+
+          vm.showSidebarMenu = false;
+          vm.showMenu = false;
 
           $('body, html').animate({
             scrollTop: targetPos,

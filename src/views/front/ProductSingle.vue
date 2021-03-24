@@ -63,12 +63,14 @@
       </div>
       <nav class="col-12 mt-4 mb-3">
         <ul class="d-flex text-center py-2 list-unstyled mb-0">
-          <li class="w-50 mr-1">
-            <a href="#" class="shadow btn btn-block btn-secondary rounded-0 py-2 text-center"
+          <li class="w-50 mr-2">
+            <a href="#" class="btn btn-block btn-outline-gray-500 text-dark py-2 text-center"
+              :class="{ 'shadow': !isPayment }"
               @click.prevent="isPayment = false">商品描述</a>
           </li>
           <li class="w-50">
-            <a href="#" class="shadow btn btn-block btn-secondary rounded-0 py-2 text-center"
+            <a href="#" class="btn btn-block btn-outline-gray-500 text-dark py-2 text-center"
+              :class="{ 'shadow': isPayment }"
               @click.prevent="isPayment = true">運送及付款方式</a>
           </li>
         </ul>

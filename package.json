@@ -1,5 +1,5 @@
 {
-  "name": "IzzyCafe",
+  "name": "izzy_cafe",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -53,10 +53,6 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "linebreak-style": [
-        "error",
-        "windows"
-      ],
       "no-param-reassign": [
         "error",
         {

@@ -1,6 +1,7 @@
 <template>
   <form class="form-signin text-center mt-4" @submit.prevent="signin()">
-    <img class="my-4 rounded-circle" src="@/assets/images/Chin.png" alt="" width="125" height="125">
+    <img class="my-4 rounded-circle" src="@/assets/images/Chin.png"
+      alt="user-image" width="125" height="125">
     <h1 class="h3 mb-3 font-weight-normal">後台管理</h1>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
@@ -18,7 +19,6 @@
     <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
   </form>
 </template>
-
 <script>
 export default {
   name: 'Signin',
@@ -45,7 +45,6 @@ export default {
   },
 };
 </script>
-
 <style lang="scss" scoped>
   html, body {
     height: 100%;

@@ -13,7 +13,7 @@
             <div class="col-md-6">
               <div class="w-100 u-bg-cover mb-3 h-md-100"
                 style="height: 150px"
-                :style="{ 'background-image': 'url(' + product.imageUrl + ')' }"></div>
+                :style="{ 'background-image': `url(${product.imageUrl})` }"></div>
             </div>
             <div class="col-md-6">
               <h5 class="h4 font-weight-bold">{{ product.title }}</h5>
@@ -46,7 +46,7 @@
               </div>
               <div class="col col-sm-4">
                 <QtyButton :data="data" @getQty="getQty"
-                  :qtyClass="['pr-sm-1', 'input-group-sm']"></QtyButton>
+                  :qtyClass="['pr-sm-1', 'input-group-sm']"/>
               </div>
               <div class="col-12 col-sm-auto ml-sm-auto mt-3 mt-sm-0">
                 <button type="submit" class="btn btn-info btn-block">

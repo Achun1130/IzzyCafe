@@ -29,7 +29,6 @@
   </nav>
 </template>
 <script>
-
 export default {
   name: 'DashboardSidebar',
   methods: {

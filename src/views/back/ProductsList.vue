@@ -71,8 +71,8 @@
                         ref="files"
                         @change="uploadImg()">
                     </div>
-                    <img :src="newProduct.imageUrl"
-                      class="img-fluid" alt="">
+                    <img :src="newProduct.imageUrl" v-if="newProduct.imageUrl"
+                      class="img-fluid" :alt="newProduct.title">
                   </div>
                   <div class="col-sm-8">
                     <ValidationProvider tag="div" class="form-group" name="標題" rules="required"
@@ -175,8 +175,8 @@
         </div>
       </div>
     </div>
-    <DelModal :data="delProduct" type="product" @delData="getProducts"></DelModal>
-    <Pagination :pagination="data.pagination" @changePage="getProducts"></Pagination>
+    <DelModal :data="delProduct" type="product" @delData="getProducts"/>
+    <Pagination :pagination="data.pagination" @changePage="getProducts"/>
   </div>
 </template>
 <script>

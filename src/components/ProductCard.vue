@@ -2,10 +2,10 @@
   <a href="#" class="c-product__card"
     @click.stop.prevent="pushPath(product.id)"
     title="查看更多">
-    <img src="@/assets/images/onsale_icon.png" alt="sale image"
+    <img src="@/assets/images/onsale_icon.png" alt="sale-image"
       class="c-product__card__sale" v-if="product.origin_price !== product.price">
     <div class="c-product__card__img"
-      :style="{ 'background-image': 'url(' + product.imageUrl + ')' }">
+      :style="{ 'background-image': `url(${product.imageUrl})` }">
       <div class="c-product__card__img__text d-none d-lg-block">
         <i class="fas fa-search mr-2"></i>查看更多
       </div>

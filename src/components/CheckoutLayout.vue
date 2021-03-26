@@ -1,6 +1,6 @@
 <template>
   <div class="container pt-4 overflow-hidden">
-    <Breadcrumb :title="[$route.name]"></Breadcrumb>
+    <Breadcrumb :title="[$route.name]"/>
     <div class="row justify-content-md-center mb-3">
       <div class="col-md-10">
         <div class="p-checkout">

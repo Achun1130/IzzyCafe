@@ -158,7 +158,7 @@
         </div>
       </div>
     </div>
-    <Pagination :pagination="data.pagination" @changePage="getOrders"></Pagination>
+    <Pagination :pagination="data.pagination" @changePage="getOrders"/>
   </div>
 </template>
 <script>

@@ -21,7 +21,7 @@
             <div class="p-checkout__grid py-2" v-for="(value, key) in order.products" :key="key">
               <div class="p-checkout__grid__title">
                 <div class="p-cart__img"
-                  :style="{ 'background-image': 'url(' + value.product.imageUrl +')' }"></div>
+                  :style="{ 'background-image': `url(${value.product.imageUrl})` }"></div>
                 <h5 class="h6">{{ value.product.title }}</h5>
               </div>
               <div class="p-checkout__grid__price">
@@ -105,7 +105,7 @@
                 <th scope="row" class=" px-sm-3 px-2">付款狀態</th>
                 <td>
                   <span class="text-success" v-if="order.is_paid">已付款</span>
-                  <span class="text-danger" v-if="!order.is_paid">尚未付款</span>
+                  <span class="text-danger" v-esle>尚未付款</span>
                 </td>
               </tr>
             </tbody>

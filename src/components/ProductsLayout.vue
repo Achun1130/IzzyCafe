@@ -10,10 +10,10 @@
         即可享有 88 折優惠 ～
       </p>
     </div>
-    <Breadcrumb :title="title"></Breadcrumb>
+    <Breadcrumb :title="title"/>
     <div class="row">
       <nav class="col-md-3 d-md-block d-none">
-        <ProductsSidebar></ProductsSidebar>
+        <ProductsSidebar/>
       </nav>
       <router-view></router-view>
     </div>

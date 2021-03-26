@@ -109,7 +109,7 @@
                 :class="{ 'border-0': key + 1 === cartsData.carts.length }">
                 <div class="d-flex mb-2">
                   <div class="p-cart__img"
-                    :style="{ 'background-image': 'url(' + item.product.imageUrl +')' }"></div>
+                    :style="{ 'background-image': `url(${item.product.imageUrl})` }"></div>
                   <div class="d-flex flex-column flex-grow-1">
                     <h5 class="h6">{{ item.product.title }}</h5>
                     <div class="d-flex flex-column mt-auto text-right">

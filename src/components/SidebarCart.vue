@@ -4,7 +4,7 @@
       <h3 class="p-cart__title">購物車</h3>
       <div class="p-cart__item" v-for="item in carts" :key="item.id">
         <a class="p-cart__img" href="#"
-          :style="{ 'background-image': 'url(' + item.imageUrl + ')' }"
+          :style="{ 'background-image': `url(${item.imageUrl})` }"
           @click.prevent="pushId(item.id)"></a>
         <div class="flex-grow-1">
           <a href="#"

@@ -7,21 +7,21 @@ const routes = [
   {
     name: '首頁',
     path: '/',
-    component: () => import('../views/front/Home.vue'),
+    component: () => import('@/views/front/Home.vue'),
   },
   {
     name: '登入',
     path: '/signin',
-    component: () => import('../views/front/Signin.vue'),
+    component: () => import('@/views/front/Signin.vue'),
   },
   {
     path: '/admin',
-    component: () => import('../components/Dashboard.vue'),
+    component: () => import('@/components/Dashboard.vue'),
     children: [
       {
         name: '產品',
         path: 'products_list',
-        component: () => import('../views/back/ProductsList.vue'),
+        component: () => import('@/views/back/ProductsList.vue'),
         meta: {
           requiresAuth: true,
         },
@@ -29,7 +29,7 @@ const routes = [
       {
         name: '訂單',
         path: 'orders',
-        component: () => import('../views/back/Orders.vue'),
+        component: () => import('@/views/back/Orders.vue'),
         meta: {
           requiresAuth: true,
         },
@@ -37,7 +37,7 @@ const routes = [
       {
         name: '優惠券',
         path: 'coupons',
-        component: () => import('../views/back/Coupons.vue'),
+        component: () => import('@/views/back/Coupons.vue'),
         meta: {
           requiresAuth: true,
         },
@@ -46,65 +46,65 @@ const routes = [
   },
   {
     path: '/products',
-    component: () => import('../components/ProductsLayout.vue'),
+    component: () => import('@/components/ProductsLayout.vue'),
     children: [
       {
         name: '所有商品',
         path: '',
-        component: () => import('../views/front/Products.vue'),
+        component: () => import('@/views/front/Products.vue'),
       },
       {
         name: '精選豆單',
         path: 'beans',
-        component: () => import('../views/front/Products.vue'),
+        component: () => import('@/views/front/Products.vue'),
       },
       {
         name: '甜點品項',
         path: 'snacks',
-        component: () => import('../views/front/Products.vue'),
+        component: () => import('@/views/front/Products.vue'),
       },
       {
         name: '禮盒專區',
         path: 'gifts',
-        component: () => import('../views/front/Products.vue'),
+        component: () => import('@/views/front/Products.vue'),
       },
       {
         name: '搜尋',
         path: 'search',
-        component: () => import('../views/front/Products.vue'),
+        component: () => import('@/views/front/Products.vue'),
       },
       {
         name: '單一商品',
         path: ':id',
-        component: () => import('../views/front/ProductSingle.vue'),
+        component: () => import('@/views/front/ProductSingle.vue'),
       },
     ],
   },
   {
     path: '/checkout',
-    component: () => import('../components/CheckoutLayout.vue'),
+    component: () => import('@/components/CheckoutLayout.vue'),
     children: [
       {
         name: '訂單結帳',
         path: '',
-        component: () => import('../views/front/CheckoutCart.vue'),
+        component: () => import('@/views/front/CheckoutCart.vue'),
       },
       {
         name: '填寫資料',
         path: 'info',
-        component: () => import('../views/front/CheckoutInfo.vue'),
+        component: () => import('@/views/front/CheckoutInfo.vue'),
       },
       {
         name: '訂單確認',
         path: 'order/:id',
-        component: () => import('../views/front/CheckoutOrder.vue'),
+        component: () => import('@/views/front/CheckoutOrder.vue'),
       },
     ],
   },
   {
     name: '門市資訊',
     path: '/location',
-    component: () => import('../views/front/Location.vue'),
+    component: () => import('@/views/front/Location.vue'),
   },
   {
     path: '*',

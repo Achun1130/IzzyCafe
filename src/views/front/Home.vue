@@ -1,6 +1,6 @@
 <template>
   <main>
-    <SwiperBanner></SwiperBanner>
+    <SwiperBanner/>
     <section class="container py-md-5 position-relative js-next mb-md-0 mb-3">
       <a href="#" class="c-next" @click.prevent="goNext()">
         <i class="fas fa-fw fa-lg fa-angle-double-down"></i>
@@ -27,7 +27,7 @@
                 <span>甜點品項</span>
                 <div class="p-home__nav__background"
                   :style="{ 'background-image':
-                  'url(' + require('@/assets/images/nav-1.jpg') + ')' }"></div>
+                  `url(${require(`@/assets/images/nav-1.jpg`)})` }"></div>
               </router-link>
             </div>
             <div class="flex-fill"
@@ -38,7 +38,7 @@
                 <span>精選豆單</span>
                 <div class="p-home__nav__background"
                   :style="{ 'background-image':
-                  'url(' + require('@/assets/images/nav-2.jpg') + ')' }"></div>
+                  `url(${require(`@/assets/images/nav-2.jpg`)})` }"></div>
               </router-link>
             </div>
             <div class="flex-fill"
@@ -50,7 +50,7 @@
                 <span>禮盒專區</span>
                 <div class="p-home__nav__background"
                   :style="{ 'background-image':
-                  'url(' + require('@/assets/images/nav-3.jpg') + ')' }"></div>
+                  `url(${require(`@/assets/images/nav-3.jpg`)})` }"></div>
               </router-link>
             </div>
           </div>
@@ -64,7 +64,7 @@
             <div class="p-home__intro__image mb-3"
               style="background-position: left bottom"
               :style="{ 'background-image':
-              'url(' + require('@/assets/images/intro-1.jpg') + ')' }"
+              `url(${require(`@/assets/images/intro-1.jpg`)})` }"
               data-aos="zoom-in"
               data-aos-duration="1000"></div>
             <h3 class="p-home__intro__title mb-lg-0 mb-3">About</h3>
@@ -90,7 +90,7 @@
             <div class="p-home__intro__image mb-3"
               style="background-position: top"
               :style="{ 'background-image':
-              'url(' + require('@/assets/images/intro-2.jpg') + ')' }"
+              `url(${require(`@/assets/images/intro-2.jpg`)})` }"
               data-aos="zoom-in"
               data-aos-duration="1000"></div>
             <h3 class="p-home__intro__title mb-lg-0 mb-3">News</h3>
@@ -119,7 +119,7 @@
         </div>
       </div>
     </section>
-    <SwiperProduct></SwiperProduct>
+    <SwiperProduct/>
     <section class="p-home__subscribe p-3">
       <div class="container py-4">
         <div class="border border-white text-white text-center">
@@ -188,8 +188,7 @@ export default {
       const scrollPos = $(window).scrollTop();
       const winHeight = $(window).height();
 
-      // eslint-disable-next-line func-names
-      $('.u-fadeUp').each(function () {
+      $('.u-fadeUp').each(function fn() {
         const fadePos = $(this).offset().top;
         if (scrollPos >= fadePos - winHeight) {
           $(this).addClass('active');

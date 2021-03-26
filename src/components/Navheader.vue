@@ -139,8 +139,7 @@ export default {
     },
     slideId() {
       const vm = this;
-      // eslint-disable-next-line func-names
-      $('.js-slideId').on('click', function (e) {
+      $('.js-slideId').on('click', function fn(e) {
         e.preventDefault();
         if (vm.$route.path === '/') {
           const headerHeight = $('.p-navheader').outerHeight();
@@ -168,8 +167,7 @@ export default {
     },
     slideActive() {
       $(window).scroll(() => {
-        // eslint-disable-next-line func-names
-        $('.js-slideId').each(function () {
+        $('.js-slideId').each(function fn() {
           const href = $(this).attr('href');
           if (document.querySelector(href)) {
             const headerHeight = $('.p-navheader').outerHeight();

@@ -13,7 +13,7 @@
       <div class="col-lg-8">
         <swiper class="swiper h-100 graphic py-4" :options="swiperOption">
           <swiper-slide v-for="item in filterProducts" :key="item.id">
-            <ProductCard :product="item" :isAnimate="true"></ProductCard>
+            <ProductCard :product="item" :isAnimate="true"/>
           </swiper-slide>
           <swiper-slide class="d-flex align-items-center justify-content-center">
             <router-link :to="{ name: '所有商品', params: { sort: 'toNew' } }"
@@ -34,7 +34,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import ProductCard from '@/components/ProductCard.vue';
+import ProductCard from './ProductCard.vue';
 
 export default {
   name: 'SwiperProduct',

@@ -2,7 +2,8 @@
   <div id="app">
     <loading :active.sync="isLoading">
       <template slot="default">
-        <img src="@/assets/images/loading-unscreen.gif" alt="" width="200" height="200">
+        <img src="@/assets/images/loading-unscreen.gif"
+          alt="loading-image" width="200" height="200">
       </template>
       <template slot="after">
         <div class="loading-dots"><div class="loading-dots-item">
@@ -11,17 +12,16 @@
       </template>
     </loading>
     <header>
-      <Navheader></Navheader>
+      <Navheader/>
     </header>
-    <Alert></Alert>
-    <SidebarCart></SidebarCart>
-    <ScrollTop></ScrollTop>
+    <Alert/>
+    <SidebarCart/>
+    <ScrollTop/>
     <router-view class="u-main__height"></router-view>
-    <IndexFooter></IndexFooter>
-    <ProductModal></ProductModal>
+    <IndexFooter/>
+    <ProductModal/>
   </div>
 </template>
-
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
@@ -53,7 +53,6 @@ export default {
   },
 };
 </script>
-
 <style lang="scss">
 @import "./assets/scss/all";
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div class="container pt-4">
-    <Breadcrumb :title="[$route.name]"></Breadcrumb>
+    <Breadcrumb :title="[$route.name]"/>
     <main class="row u-fadeIn ">
       <div class="col-sm-6 mb-3" v-for="(item, key) in locations" :key="key">
         <div class="row">
           <div class="col-lg-6 mb-3">
             <div class="u-bg-cover w-100"
-              :style="{ 'background-image': 'url(' + item.img + ')' }"
+              :style="{ 'background-image': `url(${require(`@/assets/images/${item.img}`)})` }"
               style="height: 200px"></div>
           </div>
           <div class="col-lg-6">

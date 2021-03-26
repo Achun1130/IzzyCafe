@@ -52,10 +52,10 @@
           :class="{ 'border-top-0': key !== 0 && !isGraphic }"
           @click.stop.prevent="pushPath(item.id)"
           title="查看更多">
-          <img src="@/assets/images/onsale_icon.png" alt="sale image"
+          <img src="@/assets/images/onsale_icon.png" alt="sale-image"
             class="c-product__card__sale" v-if="item.origin_price !== item.price">
           <div class="c-product__card__img"
-            :style="{ 'background-image': 'url(' + item.imageUrl + ')' }">
+            :style="{ 'background-image': `url(${item.imageUrl})` }">
             <div class="c-product__card__img__text d-none d-lg-block">
               <i class="fas fa-search mr-2"></i>查看更多
             </div>
@@ -100,7 +100,7 @@
         </a>
       </div>
     </div>
-    <ProductPagination :data="newProducts" @filterData="filterData"></ProductPagination>
+    <ProductPagination :data="newProducts" @filterData="filterData"/>
   </main>
 </template>
 <script>

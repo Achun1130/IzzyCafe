@@ -7,8 +7,8 @@
       <div class="col-sm-6 mb-3 mb-sm-0">
         <div class="w-100 u-bg-cover position-relative h-sm-100"
         style="height: 200px"
-        :style="{ 'background-image': 'url(' + product.imageUrl + ')' }">
-          <img src="@/assets/images/onsale_icon.png" alt="sale image"
+        :style="{ 'background-image': `url(${product.imageUrl})` }">
+          <img src="@/assets/images/onsale_icon.png" alt="sale-image"
             class="c-product__card__sale" v-if="product.origin_price !== product.price">
         </div>
       </div>
@@ -41,15 +41,16 @@
               <label for="qty" class="mt-2">數量</label>
             </div>
             <div class="col-12 col-sm-6">
-              <QtyButton :data="data" @getQty="getQty" :qtyClass="['pr-sm-1']"></QtyButton>
+              <QtyButton :data="data" @getQty="getQty" :qtyClass="['pr-sm-1']"/>
             </div>
             <div class="w-100 mb-2"></div>
             <div class="col-12">
               <div class="d-flex position-sm-static fixed-bottom p-sm-0 p-2
                 shadow-sm-none u-shadow-top"
                 style="z-index: 1029;"
-                :style="{ 'background-image':
-                'url(' + require('@/assets/images/vintage-concrete.png') + ')' }">
+                :style="{
+                  'background-image': `url(${require(`@/assets/images/vintage-concrete.png`)})`
+                }">
                 <button type="submit" class="btn btn-outline-info btn-block text-dark mr-2">
                   加入購物車
                 </button>
@@ -97,7 +98,6 @@
             <h5>送貨方式</h5>
             <ul class="u-fz-sm">
               <li class="mb-2">7-11取貨付款</li>
-              <li class="mb-2">7-11取貨付款</li>
               <li class="mb-2">7-11純取貨不付款</li>
               <li class="mb-2">新竹物流宅配</li>
               <li>順豐國際快遞</li>
@@ -121,7 +121,7 @@
           <div class="col-lg-4 col-sm-6 col-12 mb-4"
             v-for="(item, key) in filterProducts" :key="item.id"
             :class="{ 'd-lg-none': key === 3 }">
-            <ProductCard :product="item"></ProductCard>
+            <ProductCard :product="item"/>
           </div>
         </div>
       </div>

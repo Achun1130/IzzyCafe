@@ -28,7 +28,7 @@
               v-for="(item, key) in carts" :key="item.id">
               <div class="p-checkout__grid__title">
                 <div class="p-cart__img"
-                  :style="{ 'background-image': 'url(' + item.imageUrl +')' }"></div>
+                  :style="{ 'background-image': `url(${item.imageUrl})` }"></div>
                 <h5 class="h6">{{ item.title }}</h5>
               </div>
               <div class="p-checkout__grid__price">
@@ -41,7 +41,7 @@
               </div>
               <div class="p-checkout__grid__qty">
                 <QtyButton :data="item"
-                  :qtyClass="['input-group-sm', 'pr-sm-1']" :isId="false"></QtyButton>
+                  :qtyClass="['input-group-sm', 'pr-sm-1']" :isId="false"/>
               </div>
               <div class="p-checkout__grid__total">
                 NT{{ item.qty * item.price | currency }}
@@ -148,7 +148,6 @@ export default {
       vm.status.goCheckoutLoading = true;
       vm.$http.get(api)
         .then((response) => response.data.data.carts)
-        // eslint-disable-next-line consistent-return
         .then((cartsData) => {
           if (cartsData.length) {
             cartsData.forEach((el) => {
@@ -157,6 +156,7 @@ export default {
             });
             return vm.$http.all(reqListDel);
           }
+          return false;
         })
         .then(() => {
           carts.forEach((el) => {

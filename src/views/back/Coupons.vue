@@ -99,8 +99,8 @@
         </div>
       </div>
     </div>
-    <DelModal :data="delCoupon" type="coupon" @delData="getCoupons"></DelModal>
-    <Pagination :pagination="data.pagination" @changePage="getCoupons"></Pagination>
+    <DelModal :data="delCoupon" type="coupon" @delData="getCoupons"/>
+    <Pagination :pagination="data.pagination" @changePage="getCoupons"/>
   </div>
 </template>
 <script>

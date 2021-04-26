@@ -105,7 +105,7 @@
                 <th scope="row" class=" px-sm-3 px-2">付款狀態</th>
                 <td>
                   <span class="text-success" v-if="order.is_paid">已付款</span>
-                  <span class="text-danger" v-esle>尚未付款</span>
+                  <span class="text-danger" v-else>尚未付款</span>
                 </td>
               </tr>
             </tbody>
@@ -206,12 +206,9 @@ export default {
   computed: {
     cartTotal() {
       let total = 0;
-      // eslint-disable-next-line no-restricted-syntax
-      for (const key in this.order.products) {
-        if (key) {
-          total += this.order.products[key].total;
-        }
-      }
+      Object.values(this.order.products).forEach((el) => {
+        total += el.total;
+      });
       return total;
     },
   },
